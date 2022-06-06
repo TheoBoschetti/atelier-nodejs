@@ -1,0 +1,39 @@
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: backend
+tags:
+  - name: Dogs
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  '/stats':
+    get:
+      tags:
+        - Dogs
+      summary: get all dogs
+      responses:
+        200:
+          description: SUCCESS
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 1
+                name:
+                  type: string
+                  example: Chien
+                owner:
+                  type: string
+                  example: Jean
+
+        500:
+          description: INTERNAL SERVER ERROR
